@@ -2,7 +2,7 @@ const foods = [
   {
     id: 1,
     name: " Bread ",
-    image: "Bread.jpg",
+    image: "Bread.webp",
     caloriesPer100g: 270, // 162 kcal / 60g * 100
     protein: 6.7, // 4g / 60g * 100
     fat: 2.5, // 1.5g / 60g * 100
@@ -11,7 +11,7 @@ const foods = [
   {
     id: 2,
     name: "French Baguette ",
-    image: "Baguette.jpg",
+    image: "Baguette.webp",
     caloriesPer100g: 266, // 133 kcal / 50g * 100
     protein: 8, // 4g / 50g * 100
     fat: 1.6, // 0.8g / 50g * 100
@@ -20,7 +20,7 @@ const foods = [
   {
     id: 3,
     name: "Boiled Egg ",
-    image: "BoiledEgg.jpg",
+    image: "BoiledEgg.webp",
     caloriesPer100g: 155, // 77.5 kcal / 50g * 100
     protein: 12.6, // 6.3g / 50g * 100
     fat: 10.6, // 5.3g / 50g * 100
@@ -29,7 +29,7 @@ const foods = [
   {
     id: 4,
     name: "Fried Egg ",
-    image: "FriedEgg.jpg",
+    image: "FriedEgg.webp",
     caloriesPer100g: 190, // 95 kcal / 50g * 100
     protein: 12, // 6g / 50g * 100
     fat: 15, // 7.5g / 50g * 100
@@ -38,7 +38,7 @@ const foods = [
   {
     id: 5,
     name: "Tomato ",
-    image: "Tomato.jpg",
+    image: "Tomato.webp",
     caloriesPer100g: 18,
     protein: 0.9,
     fat: 0.2,
@@ -47,7 +47,7 @@ const foods = [
   {
     id: 6,
     name: "Cucumber ",
-    image: "Cucumber.jpg",
+    image: "Cucumber.webp",
     caloriesPer100g: 16,
     protein: 0.7,
     fat: 0.1,
@@ -56,7 +56,7 @@ const foods = [
   {
     id: 7,
     name: "Lettuce",
-    image: "Lettuce.jpg",
+    image: "Lettuce.webp",
     caloriesPer100g: 14,
     protein: 0.9,
     fat: 0.1,
@@ -65,7 +65,7 @@ const foods = [
   {
     id: 8,
     name: "Pasta, Dry ",
-    image: "Pasta.jpg",
+    image: "Pasta.webp",
     caloriesPer100g: 350,
     protein: 12,
     fat: 1.5,
@@ -74,7 +74,7 @@ const foods = [
   {
     id: 9,
     name: "Cheddar Cheese ",
-    image: "CheddarCheese.jpg",
+    image: "CheddarCheese.webp",
     caloriesPer100g: 403,
     protein: 25,
     fat: 33,
@@ -83,7 +83,7 @@ const foods = [
   {
     id: 10,
     name: "Mozzarella Cheese ",
-    image: "MozzarellaCheese.jpg",
+    image: "MozzarellaCheese.webp",
     caloriesPer100g: 280,
     protein: 18,
     fat: 17,
@@ -92,7 +92,7 @@ const foods = [
   {
     id: 11,
     name: "Turkey Cheese ",
-    image: "TurkeyCheese.jpg",
+    image: "TurkeyCheese.webp",
     caloriesPer100g: 286,
     protein: 18,
     fat: 23,
@@ -101,7 +101,7 @@ const foods = [
   {
     id: 12,
     name: "Oil ",
-    image: "Oil.jpg",
+    image: "Oil.webp",
     caloriesPer100g: 884,
     protein: 0,
     fat: 100,
@@ -110,7 +110,7 @@ const foods = [
   {
     id: 13,
     name: "Ghee ",
-    image: "Ghee.jpg",
+    image: "Ghee.webp",
     caloriesPer100g: 900,
     protein: 0,
     fat: 100,
@@ -119,7 +119,7 @@ const foods = [
   {
     id: 14,
     name: "Beans ",
-    image: "Beans.jpg",
+    image: "Beans.webp",
     caloriesPer100g: 76,
     protein: 4.5,
     fat: 0.5,
@@ -128,7 +128,7 @@ const foods = [
   {
     id: 15,
     name: "Tahini ",
-    image: "Tahini.jpg",
+    image: "Tahini.webp",
     caloriesPer100g: 595,
     protein: 17,
     fat: 53,
@@ -137,7 +137,7 @@ const foods = [
   {
     id: 16,
     name: "Chocolate ",
-    image: "Chocolate.jpg",
+    image: "Chocolate.webp",
     caloriesPer100g: 546,
     protein: 4.9,
     fat: 31,
@@ -146,7 +146,7 @@ const foods = [
   {
     id: 17,
     name: "Dark Chocolate ",
-    image: "DarkChocolate.jpg",
+        image: "DarkChocolate.webp",
     caloriesPer100g: 546,
     protein: 4.9,
     fat: 31,
@@ -155,7 +155,7 @@ const foods = [
   {
     id: 18,
     name: "Minced Meat (Beef) ",
-    image: "MincedMeatBeef.jpg",
+    image: "MincedMeatBeef.webp",
     caloriesPer100g: 250,
     protein: 26,
     fat: 15,
@@ -164,7 +164,7 @@ const foods = [
   {
     id: 19,
     name: "Rice ",
-    image: "rice.jpg",
+    image: "rice.webp",
     caloriesPer100g: 130,
     protein: 2.7,
     fat: 0.3,
@@ -173,7 +173,7 @@ const foods = [
   {
     id: 20,
     name: "Meat ",
-    image: "meat.jpg",
+    image: "meat.webp",
     caloriesPer100g: 250,
     protein: 26,
     fat: 15,
@@ -182,7 +182,7 @@ const foods = [
   {
     id: 21,
     name: "Chicken ",
-    image: "Chicken.jpg",
+    image: "Chicken.webp",
     caloriesPer100g: 239,
     protein: 27,
     fat: 14,
@@ -191,7 +191,7 @@ const foods = [
   {
     id: 22,
     name: "Liver ",
-    image: "Liver.jpg",
+      image: "Liver.webp",
     caloriesPer100g: 135,
     protein: 20.4,
     fat: 3.6,

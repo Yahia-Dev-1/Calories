@@ -1,7 +1,7 @@
 import { useTotal } from "./context/TotalContext";
 
 function Sidebar() {
-const { totalCalories, totalCarbs, totalProtein, totalFat, addedFoods, removeFood } = useTotal();
+const { totalCalories, totalCarbs, totalProtein, totalFat, addedFoods, removeFood, clearAll } = useTotal();
 
     return (
       
@@ -22,6 +22,12 @@ const { totalCalories, totalCarbs, totalProtein, totalFat, addedFoods, removeFoo
                 </li>
               ))}
             </ul>
+            <button
+              onClick={clearAll}
+              className="bg-red-600 text-white px-4 py-2 rounded mt-4 hover:bg-red-700 transition"
+            >
+              delete all
+            </button>
           </aside>
         </div>
     )

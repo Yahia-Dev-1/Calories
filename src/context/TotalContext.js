@@ -64,9 +64,17 @@ export const TotalProvider = ({ children }) => {
     });
   };
 
+  const clearAll = () => {
+    setAddedFoods([]);
+    setTotalCalories(0);
+    setTotalCarbs(0);
+    setTotalProtein(0);
+    setTotalFat(0);
+  };
+
   return (
     <TotalContext.Provider value={{
-      totalCalories, totalCarbs, totalProtein, totalFat, addMacros, addedFoods, removeFood
+      totalCalories, totalCarbs, totalProtein, totalFat, addMacros, addedFoods, removeFood, clearAll
     }}>
       {children}
     </TotalContext.Provider>
