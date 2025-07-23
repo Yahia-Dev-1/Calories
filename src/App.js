@@ -30,9 +30,10 @@ function AppContent() {
           <Route 
             path="/"
             element={
-              <div>
-                <h1>Test</h1>
-                {foods.map(food => <div key={food.id}>{food.name}</div>)}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center items-center">
+                {foods.map((food) => (
+                  <FoodCard key={food.id} food={food} onCardClick={handleCardClick} />
+                ))}
               </div>
             }
           />
