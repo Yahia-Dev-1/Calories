@@ -47,7 +47,7 @@ function App() {
   return (
    
       <TotalProvider>
-         <Router>
+         <Router basename="/Calories">
         <AppContent />
          </Router>
       </TotalProvider>
