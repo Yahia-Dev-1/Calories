@@ -1,7 +1,7 @@
 const foods = [
   {
     id: 1,
-    name: "Baladi Bread ",
+    name: " Bread ",
     image: "Bread.jpg",
     caloriesPer100g: 270, // 162 kcal / 60g * 100
     protein: 6.7, // 4g / 60g * 100

@@ -4,11 +4,26 @@ import React, { createContext, useContext, useState } from "react";
 const TotalContext = createContext();
 
 export const TotalProvider = ({ children }) => {
-  const [totalCalories, setTotalCalories] = useState(0);
-  const [totalCarbs, setTotalCarbs] = useState(0);
-  const [totalProtein, setTotalProtein] = useState(0);
-  const [totalFat, setTotalFat] = useState(0);
-  const [addedFoods, setAddedFoods] = useState([]);
+  // قراءة البيانات من localStorage أو استخدام القيم الافتراضية
+  const getInitial = (key, def) => {
+    const val = localStorage.getItem(key);
+    return val ? JSON.parse(val) : def;
+  };
+
+  const [totalCalories, setTotalCalories] = useState(getInitial('totalCalories', 0));
+  const [totalCarbs, setTotalCarbs] = useState(getInitial('totalCarbs', 0));
+  const [totalProtein, setTotalProtein] = useState(getInitial('totalProtein', 0));
+  const [totalFat, setTotalFat] = useState(getInitial('totalFat', 0));
+  const [addedFoods, setAddedFoods] = useState(getInitial('addedFoods', []));
+
+  // حفظ القيم في localStorage عند أي تغيير
+  React.useEffect(() => {
+    localStorage.setItem('totalCalories', JSON.stringify(totalCalories));
+    localStorage.setItem('totalCarbs', JSON.stringify(totalCarbs));
+    localStorage.setItem('totalProtein', JSON.stringify(totalProtein));
+    localStorage.setItem('totalFat', JSON.stringify(totalFat));
+    localStorage.setItem('addedFoods', JSON.stringify(addedFoods));
+  }, [totalCalories, totalCarbs, totalProtein, totalFat, addedFoods]);
 
   const addCalories = (amount) => {
     setTotalCalories(prev => prev + amount);
