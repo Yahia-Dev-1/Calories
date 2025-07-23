@@ -1,37 +1,15 @@
 {
   "files": {
     "main.css": "/Calories/static/css/main.419d88a4.css",
-    "main.js": "/Calories/static/js/main.0b5adccf.js",
+    "main.js": "/Calories/static/js/main.d1b91d83.js",
     "static/js/453.b72b36d6.chunk.js": "/Calories/static/js/453.b72b36d6.chunk.js",
-    "static/media/Oil.jpg": "/Calories/static/media/Oil.8d87f81fe8e0d46bee69.jpg",
-    "static/media/Lettuce.jpg": "/Calories/static/media/Lettuce.83c251e3f58f2eb3ce91.jpg",
-    "static/media/Pasta.jpg": "/Calories/static/media/Pasta.2c1c24f0dd02fde42a5b.jpg",
-    "static/media/Ghee.jpg": "/Calories/static/media/Ghee.3b169a540b1b05480d37.jpg",
-    "static/media/Chocolate.jpg": "/Calories/static/media/Chocolate.66ac3f611a1cca5b64e9.jpg",
-    "static/media/DarkChocolate.jpg": "/Calories/static/media/DarkChocolate.560a3ff23d62f6432748.jpg",
-    "static/media/FriedEgg.jpg": "/Calories/static/media/FriedEgg.b5637bc8811b890e6c30.jpg",
-    "static/media/MincedMeatBeef.jpg": "/Calories/static/media/MincedMeatBeef.a48fe2d3542d5ee8bbdf.jpg",
-    "static/media/Chicken.jpg": "/Calories/static/media/Chicken.558a624c187a4330f1d0.jpg",
-    "static/media/Baguette.jpg": "/Calories/static/media/Baguette.f8b2be4240dcf32360dd.jpg",
-    "static/media/BoiledEgg.jpg": "/Calories/static/media/BoiledEgg.a643886cc08ccc8cd7f9.jpg",
-    "static/media/Cucumber.jpg": "/Calories/static/media/Cucumber.2f6cbb7dcec3d4126b07.jpg",
-    "static/media/Tomato.jpg": "/Calories/static/media/Tomato.aeb9d4d702aa11e3d31a.jpg",
-    "static/media/meat.jpg": "/Calories/static/media/meat.1c500cd3698dca86a701.jpg",
-    "static/media/rice.jpg": "/Calories/static/media/rice.4f973bddc6e60ab066de.jpg",
-    "static/media/CheddarCheese.jpg": "/Calories/static/media/CheddarCheese.68ef270e773fed4dcaae.jpg",
-    "static/media/Bread.jpg": "/Calories/static/media/Bread.2adfaeb33767502912a7.jpg",
-    "static/media/TurkeyCheese.jpg": "/Calories/static/media/TurkeyCheese.498b53cea4c111ff23b0.jpg",
-    "static/media/Tahini.jpg": "/Calories/static/media/Tahini.1f413154375112f755a4.jpg",
-    "static/media/Liver.jpg": "/Calories/static/media/Liver.488de59d9cd535c3bdd4.jpg",
-    "static/media/Beans.jpg": "/Calories/static/media/Beans.57d73545771688be652d.jpg",
-    "static/media/MozzarellaCheese.jpg": "/Calories/static/media/MozzarellaCheese.44cf495a97b50525f0ab.jpg",
     "index.html": "/Calories/index.html",
     "main.419d88a4.css.map": "/Calories/static/css/main.419d88a4.css.map",
-    "main.0b5adccf.js.map": "/Calories/static/js/main.0b5adccf.js.map",
+    "main.d1b91d83.js.map": "/Calories/static/js/main.d1b91d83.js.map",
     "453.b72b36d6.chunk.js.map": "/Calories/static/js/453.b72b36d6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.419d88a4.css",
-    "static/js/main.0b5adccf.js"
+    "static/js/main.d1b91d83.js"
   ]
 }
