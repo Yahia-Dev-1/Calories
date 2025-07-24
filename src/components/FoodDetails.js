@@ -23,7 +23,7 @@ const FoodDetails = () => {
   
     
     <div className="   flex flex-col items-center    bg-white rounded shadow p-6 w-full max-w-md mx-auto mt-8">
-      <img  loading="lazy" src={process.env.PUBLIC_URL + '/img/' + food.image} alt={food.name} width="200" className="mb-4 rounded  " />
+      <img src={process.env.PUBLIC_URL + '/img/' + food.image} alt={food.name} width="200" className="mb-4 rounded  " />
       <h2 className="text-2xl font-bold mb-2">{food.name}</h2>
       <p className="mb-1">Calories: <span className="font-semibold">{calc(food.caloriesPer100g)}</span></p>
       <p className="mb-1">Protein: <span className="font-semibold">{calc(food.protein)}</span> g</p>
