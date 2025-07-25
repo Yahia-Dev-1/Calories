@@ -2,16 +2,27 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import { useState, useEffect } from "react";
 import FoodDetails from "./components/FoodDetails";
 import FoodCard from "./components/FoodCard";
+import NavigationMenu from "./components/NavigationMenu";
+import HamburgerMenu from "./components/HamburgerMenu";
+import About from "./components/About";
+import Search from "./components/Search";
+import Profile from "./components/Profile";
 import foods from "./data/foods";
 import Sidebar from "./Sidebar";
 import { TotalProvider } from "./context/TotalContext";
+import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import { AnimatePresence, motion } from "framer-motion";
-
+import "./App.css"; 
 
 function AppContent() {
   const [showSidebar, setShowSidebar] = useState(true);
-  const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const location = useLocation();
+  const { isDarkMode, toggleTheme, backgroundColor, textColor, cardBackground, cardText, cardHover, inputBackground, inputText, inputBorder } = useTheme();
+  // عند فتح الصفحة، الفلتر يعود للوضع الافتراضي
+  useEffect(() => {
+    setSelectedCategory('All');
+  }, [location.pathname]);
 
 
   useEffect(() => {
@@ -23,33 +34,42 @@ function AppContent() {
 
   const handleCardClick = () => setShowSidebar(false);
 
-  // فلترة الأطعمة حسب البحث
+
+
+
+  const categories = ['All', ...Array.from(new Set(foods.map(f => f.category).filter(Boolean)))];
+
+
+
+  // فلترة الأطعمة حسب التصنيف
   const filteredFoods = foods.filter(food =>
-    food.name.toLowerCase().includes(search.toLowerCase())
+    selectedCategory === 'All' || food.category === selectedCategory
   );
 
   return (
-    <div>
- 
+    <div className={`min-h-screen transition-colors duration-300 ${backgroundColor}`}>
+      {/* قائمة التنقل */}
+      <NavigationMenu />
+      
+      {/* Hamburger Menu للفلتر */}
+      <HamburgerMenu 
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onCategorySelect={setSelectedCategory}
+      />
 
       {showSidebar && <Sidebar />}
-      {/* شريط البحث أعلى يسار الصفحة */}
-      <div className="flex flex-row justify-center items-center px-8 mt-4 pb-5 gap-2">
-        <div className="relative w-64">
-          <input
-            type="text"
-            placeholder=" 🔎Search for food..."
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-            className="border border-gray-300 rounded-full pl-4 pr-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white shadow-sm placeholder-gray-400"
-            style={{direction: 'ltr'}}
-          />
+      
+      {/* عرض التصنيف المحدد */}
+      {location.pathname === "/" && (
+        <div className="text-center mt-4 mb-6">
+          <h2 className={`text-xl font-semibold ${textColor}`}>
+            {selectedCategory === 'All' ? 'All Categories' : selectedCategory}
+          </h2>
         </div>
-        <span className="text-gray-400 text-xl">
-        
-        </span>
-      </div>
-      <div className="flex flex-row justify-center items-center ">
+      )}
+      
+      <div className="flex flex-row justify-center items-center pb-24">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route 
@@ -81,6 +101,45 @@ function AppContent() {
                 </motion.div>
               }
             />
+            <Route 
+              path="/about" 
+              element={
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <About />
+                </motion.div>
+              }
+            />
+            <Route 
+              path="/search" 
+              element={
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <Search />
+                </motion.div>
+              }
+            />
+            <Route 
+              path="/profile" 
+              element={
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <Profile />
+                </motion.div>
+              }
+            />
           </Routes>
         </AnimatePresence>
       </div>
@@ -90,13 +149,13 @@ function AppContent() {
 
 function App() {
   return (
-   
+    <ThemeProvider>
       <TotalProvider>
          <Router basename="/Calories">
         <AppContent />
          </Router>
       </TotalProvider>
-   
+    </ThemeProvider>
   );
 }
 
