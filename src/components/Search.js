@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
+import { useFavorites } from '../context/FavoritesContext';
 import foods from '../data/foods';
 import FoodCard from './FoodCard';
 import Sidebar from '../Sidebar';
@@ -7,16 +8,40 @@ import Sidebar from '../Sidebar';
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const { cardBackground, cardText, textColor } = useTheme();
+  const { toggleFavorite, isFavorite } = useFavorites();
+
+  // Scroll to top when component mounts and on reload
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Scroll to top on page reload
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   const filteredFoods = foods.filter(food =>
     food.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     food.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const handleHeartClick = (e, foodId) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleFavorite(foodId);
+  };
+
   return (
     <div className="min-h-screen p-4 pb-24">
       <Sidebar />
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto px-4">
         <h1 className={`text-3xl font-bold mb-6 ${cardText} text-center`}>
           Search Foods
         </h1>
@@ -40,6 +65,7 @@ const Search = () => {
                   className="input"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
+                  style={{ backgroundColor: '#2a2a2a', color: '#ffffff' }}
                 />
                 <div id="input-mask" />
                 <div id="pink-mask" />
@@ -77,11 +103,25 @@ const Search = () => {
           </p>
         </div>
 
-        {/* Food Grid */}
+        {/* Food Grid with Heart Buttons */}
         {filteredFoods.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 gap-x-12 justify-center items-center">
             {filteredFoods.map((food) => (
-              <FoodCard key={food.id} food={food} onCardClick={() => {}} />
+              <div key={food.id} className="relative">
+                <FoodCard food={food} onCardClick={() => {}} />
+                {/* Heart Button */}
+                <button
+                  onClick={(e) => handleHeartClick(e, food.id)}
+                  className="absolute top-3 right-3 z-20 bg-white bg-opacity-90 rounded-full p-1.5 hover:bg-opacity-100 transition-all duration-200 shadow-md"
+                >
+                  <svg 
+                    className={`w-4 h-4 ${isFavorite(food.id) ? 'text-red-500 fill-current' : 'text-gray-400'}`} 
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </button>
+              </div>
             ))}
           </div>
         ) : searchTerm ? (

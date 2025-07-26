@@ -11,11 +11,22 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // قراءة حالة الوضع المظلم من localStorage أو استخدام القيمة الافتراضية
+  const getInitialTheme = () => {
+    const savedTheme = localStorage.getItem('isDarkMode');
+    return savedTheme ? JSON.parse(savedTheme) : false;
+  };
+
+  const [isDarkMode, setIsDarkMode] = useState(getInitialTheme);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
+
+  // حفظ حالة الوضع المظلم في localStorage عند التغيير
+  useEffect(() => {
+    localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
+  }, [isDarkMode]);
 
   // تطبيق الوضع المظلم على مستوى document
   useEffect(() => {

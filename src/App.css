@@ -650,7 +650,7 @@
 }
 
 .search-wrapper .input {
-  background-color: #010201;
+  background-color: #2a2a2a;
   border: none;
   width: 387px;
   height: 66px;
@@ -658,6 +658,12 @@
   color: white;
   padding-inline: 59px;
   font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.search-wrapper .input:focus {
+  background-color: #3a3a3a;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .search-wrapper #poda {
@@ -683,7 +689,7 @@
   width: 100px;
   height: 20px;
   position: absolute;
-  background: linear-gradient(90deg, transparent, black);
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1));
   top: 18px;
   left: 70px;
 }
