@@ -75,7 +75,7 @@ const foods = [
   // Carbs
   {
     id: 8,
-    name: "Pasta, Dry",
+    name: "Pasta",
     image: "Pasta.webp",
     caloriesPer100g: 371,
     protein: 13,
@@ -84,7 +84,7 @@ const foods = [
     category: "Carbs"
   },
   {
-    id: 19,
+    id: 9,
     name: "Rice",
     image: "rice.webp",
     caloriesPer100g: 360,
@@ -94,8 +94,8 @@ const foods = [
     category: "Carbs"
   },
   {
-    id: 45,
-    name: "Flour (wheat)",
+    id: 10,
+    name: "Flour",
     image: "Flour.webp",
     caloriesPer100g: 364,
     protein: 10.3,
@@ -103,40 +103,40 @@ const foods = [
     carbs: 76.3,
     category: "Carbs"
   },
-  // Cheese
+  // Dairy
   {
-    id: 9,
+    id: 11,
     name: "Cheddar Cheese",
     image: "CheddarCheese.webp",
     caloriesPer100g: 404,
     protein: 23,
     fat: 33,
     carbs: 3.1,
-    category: "Cheese"
+    category: "Dairy"
   },
   {
-    id: 10,
+    id: 12,
     name: "Mozzarella Cheese",
     image: "MozzarellaCheese.webp",
     caloriesPer100g: 280,
     protein: 28,
     fat: 17,
     carbs: 3.1,
-    category: "Cheese"
+    category: "Dairy"
   },
   {
-    id: 11,
+    id: 13,
     name: "Turkey Cheese",
     image: "TurkeyCheese.webp",
     caloriesPer100g: 387,
     protein: 4.5,
     fat: 18,
     carbs: 3.6,
-    category: "Cheese"
+    category: "Dairy"
   },
   // Fats
   {
-    id: 12,
+    id: 14,
     name: "Oil",
     image: "Oil.webp",
     caloriesPer100g: 884,
@@ -146,7 +146,7 @@ const foods = [
     category: "Fats"
   },
   {
-    id: 13,
+    id: 15,
     name: "Ghee",
     image: "Ghee.webp",
     caloriesPer100g: 876,
@@ -157,7 +157,7 @@ const foods = [
   },
   // Legumes
   {
-    id: 14,
+    id: 16,
     name: "Beans",
     image: "Beans.webp",
     caloriesPer100g: 105,
@@ -167,7 +167,7 @@ const foods = [
     category: "Legumes"
   },
   {
-    id: 15,
+    id: 17,
     name: "Tahini",
     image: "Tahini.webp",
     caloriesPer100g: 595,
@@ -178,7 +178,7 @@ const foods = [
   },
   // Sweets
   {
-    id: 16,
+    id: 18,
     name: "Chocolate",
     image: "Chocolate.webp",
     caloriesPer100g: 535,
@@ -188,7 +188,7 @@ const foods = [
     category: "Sweets"
   },
   {
-    id: 17,
+    id: 19,
     name: "Dark Chocolate",
     image: "DarkChocolate.webp",
     caloriesPer100g: 505,
@@ -199,8 +199,8 @@ const foods = [
   },
   // Meat
   {
-    id: 18,
-    name: "Minced Meat (Beef)",
+    id: 20,
+    name: "Minced Meat",
     image: "MincedMeatBeef.webp",
     caloriesPer100g: 254,
     protein: 17.17,
@@ -209,7 +209,7 @@ const foods = [
     category: "Meat"
   },
   {
-    id: 20,
+    id: 21,
     name: "Meat",
     image: "meat.webp",
     caloriesPer100g: 288,
@@ -219,7 +219,7 @@ const foods = [
     category: "Meat"
   },
   {
-    id: 36,
+    id: 22,
     name: "Grilled meat",
     image: "Grilledmeat.webp",
     caloriesPer100g: 252,
@@ -229,8 +229,8 @@ const foods = [
     category: "Meat"
   },
   {
-    id: 37,
-    name: "Ribs (beef)",
+    id: 23,
+    name: "Ribs",
     image: "BeefRibs.webp",
     caloriesPer100g: 388,
     protein: 14.0,
@@ -239,7 +239,7 @@ const foods = [
     category: "Meat"
   },
   {
-    id: 32,
+    id: 24,
     name: "Mombar",
     image: "Mombar.webp",
     caloriesPer100g: 192,
@@ -249,8 +249,8 @@ const foods = [
     category: "Meat"
   },
   {
-    id: 35,
-    name: "lung (boiled)",
+    id: 25,
+    name: "Lung",
     image: "lung.webp",
     caloriesPer100g: 92,
     protein: 16.2,
@@ -259,8 +259,8 @@ const foods = [
     category: "Meat"
   },
   {
-    id: 39,
-    name: "Spleen (boiled)",
+    id: 26,
+    name: "Spleen",
     image: "Spleen.webp",
     caloriesPer100g: 105,
     protein: 18.3,
@@ -269,8 +269,8 @@ const foods = [
     category: "Meat"
   },
   {
-    id: 40,
-    name: "Brain ",
+    id: 27,
+    name: "Brain",
     image: "Brain.webp",
     caloriesPer100g: 143,
     protein: 10.9,
@@ -280,7 +280,7 @@ const foods = [
   },
   // Poultry
   {
-    id: 21,
+    id: 28,
     name: "Chicken",
     image: "Chicken.webp",
     caloriesPer100g: 110,
@@ -290,8 +290,8 @@ const foods = [
     category: "Poultry"
   },
   {
-    id: 38,
-    name: "FriedChicken",
+    id: 29,
+    name: "Fried Chicken",
     image: "FriedChicken.webp",
     caloriesPer100g: 245,
     protein: 24.9,
@@ -299,30 +299,30 @@ const foods = [
     carbs: 0,
     category: "Poultry"
   },
-  // Organs
+  // Meat & Poultry
   {
-    id: 22,
+    id: 30,
     name: "Liver",
     image: "Liver.webp",
     caloriesPer100g: 116,
     protein: 16.92,
     fat: 4.83,
     carbs: 0,
-    category: "Organs"
+    category: "Meat"
   },
   {
-    id: 42,
+    id: 31,
     name: "Chicken liver",
-    image: "Liver.webp",
+    image: "Brain.webp",
     caloriesPer100g: 116,
     protein: 16.9,
     fat: 4.8,
     carbs: 0,
-    category: "Organs"
+    category: "Poultry"
   },
   // Fish & Rabbit
   {
-    id: 24,
+    id: 32,
     name: "Fish",
     image: "fish.webp",
     caloriesPer100g: 146,
@@ -332,7 +332,7 @@ const foods = [
     category: "Fish"
   },
   {
-    id: 43,
+    id: 33,
     name: "Rabbit meat",
     image: "Rabbitmeat.webp",
     caloriesPer100g: 136,
@@ -343,7 +343,7 @@ const foods = [
   },
   // Dairy
   {
-    id: 25,
+    id: 34,
     name: "Milk",
     image: "milk.webp",
     caloriesPer100g: 62,
@@ -354,7 +354,7 @@ const foods = [
   },
   // Potato
   {
-    id: 26,
+    id: 35,
     name: "French fries",
     image: "Frenchfries.webp",
     caloriesPer100g: 213,
@@ -365,7 +365,7 @@ const foods = [
   },
   // Fruits
   {
-    id: 27,
+    id: 36,
     name: "Banana",
     image: "banana.webp",
     caloriesPer100g: 89,
@@ -375,7 +375,7 @@ const foods = [
     category: "Fruits"
   },
   {
-    id: 28,
+    id: 37,
     name: "Mango",
     image: "mango.webp",
     caloriesPer100g: 80,
@@ -384,19 +384,9 @@ const foods = [
     carbs: 20,
     category: "Fruits"
   },
-  {
-    id: 31,
-    name: "Orange",
-    image: "orange.webp",
-    caloriesPer100g: 47,
-    protein: 0.9,
-    fat: 0.1,
-    carbs: 12,
-    category: "Fruits"
-  },
   // Nuts
   {
-    id: 29,
+    id: 38,
     name: "Peanut butter",
     image: "peanutbutter.webp",
     caloriesPer100g: 588,
@@ -406,7 +396,7 @@ const foods = [
     category: "Nuts"
   },
   {
-    id: 30,
+    id: 39,
     name: "Peanuts",
     image: "peanut.webp",
     caloriesPer100g: 567,
@@ -417,8 +407,8 @@ const foods = [
   },
   // Others
   {
-    id: 33,
-    name: "Onion (raw)",
+    id: 40,
+    name: "Onion",
     image: "Onion.webp",
     caloriesPer100g: 40,
     protein: 1.1,
@@ -427,8 +417,8 @@ const foods = [
     category: "Vegetables"
   },
   {
-    id: 33,
-    name: "falafel",
+    id: 41,
+    name: "Falafel",
     image: "falafel.webp",
     caloriesPer100g: 333,
     protein: 13.3,
@@ -437,8 +427,8 @@ const foods = [
     category: "Traditional"
   },
   {
-    id: 41,
-    name: "Macaroni with béchamel",
+    id: 42,
+    name: "Macaroni béchamel",
     image: "Macaroniwithbéchamel.webp",
     caloriesPer100g: 175,
     protein: 5.1,
@@ -447,14 +437,195 @@ const foods = [
     category: "Pastry"
   },
   {
-    id: 44,
-    name: "Pizza (plain cheese)",
+    id: 43,
+    name: "Pizza",
     image: "Pizza.webp",
     caloriesPer100g: 276,
     protein: 12.3,
     fat: 11.7,
     carbs: 30.3,
     category: "Pastry"
+  },
+  // New Foods
+  {
+    id: 44,
+    name: "Popcorn",
+    image: "popcorn.webp",
+    caloriesPer100g: 387,
+    protein: 13,
+    fat: 4.5,
+    carbs: 78,
+    category: "Snacks"
+  },
+  {
+    id: 45,
+    name: "Grilled salmon",
+    image: "salmon.webp",
+    caloriesPer100g: 265,
+    protein: 26.5,
+    fat: 17.3,
+    carbs: 0,
+    category: "Fish"
+  },
+  {
+    id: 46,
+    name: "Donut",
+    image: "Donuts.webp",
+    caloriesPer100g: 361,
+    protein: 6.4,
+    fat: 24.5,
+    carbs: 30,
+    category: "Sweets"
+  },
+  {
+    id: 47,
+    name: "Boiled potatoes",
+    image: "Boiledpotatoes.webp",
+    caloriesPer100g: 87,
+    protein: 1.9,
+    fat: 0.1,
+    carbs: 20.1,
+    category: "Potato"
+  },
+  {
+    id: 48,
+    name: "Moussaka",
+    image: "Mahshi.webp",
+    caloriesPer100g: 140,
+    protein: 6,
+    fat: 8,
+    carbs: 15,
+    category: "Traditional"
+  },
+  {
+    id: 49,
+    name: "Molokhia",
+    image: "Molokhia.webp",
+    caloriesPer100g: 64,
+    protein: 2.6,
+    fat: 3.6,
+    carbs: 4.9,
+    category: "Traditional"
+  },
+  {
+    id: 50,
+    name: "Vegetable soup",
+    image: "Vegetablesoup.webp",
+    caloriesPer100g: 42,
+    protein: 1.8,
+    fat: 1.9,
+    carbs: 5.1,
+    category: "Traditional"
+  },
+  {
+    id: 51,
+    name: "Grilled pigeon",
+    image: "Grilledpigeon.webp",
+    caloriesPer100g: 294,
+    protein: 18.5,
+    fat: 23.8,
+    carbs: 0,
+    category: "Poultry"
+  },
+  {
+    id: 52,
+    name: "Stuffed pigeon",
+    image: "Stuffedpigeon (rice &.webp",
+    caloriesPer100g: 230,
+    protein: 10,
+    fat: 13,
+    carbs: 17,
+    category: "Poultry"
+  },
+  {
+    id: 53,
+    name: "White rice",
+    image: "rice.webp",
+    caloriesPer100g: 138,
+    protein: 2.7,
+    fat: 0.5,
+    carbs: 31,
+    category: "Carbs"
+  },
+  {
+    id: 54,
+    name: "Freekeh",
+    image: "Flour.webp",
+    caloriesPer100g: 124,
+    protein: 5,
+    fat: 1.2,
+    carbs: 12.2,
+    category: "Carbs"
+  },
+  {
+    id: 55,
+    name: "Sautéed vegetables",
+    image: "Sautéedmixedvegetables.webp",
+    caloriesPer100g: 67,
+    protein: 1.3,
+    fat: 4.7,
+    carbs: 6.7,
+    category: "Vegetables"
+  },
+  {
+    id: 56,
+    name: "Fried eggplant",
+    image: "Lettuce.webp",
+    caloriesPer100g: 218,
+    protein: 3.7,
+    fat: 12.7,
+    carbs: 22.3,
+    category: "Vegetables"
+  },
+  {
+    id: 57,
+    name: "Cannelloni",
+    image: "Cannelloni.webp",
+    caloriesPer100g: 210,
+    protein: 10.5,
+    fat: 8,
+    carbs: 24,
+    category: "Pastry"
+  },
+  {
+    id: 58,
+    name: "Lasagna",
+    image: "Lasagna.webp",
+    caloriesPer100g: 163,
+    protein: 10,
+    fat: 6,
+    carbs: 17.2,
+    category: "Pastry"
+  },
+  {
+    id: 59,
+    name: "Grilled fish",
+    image: "BeefRibs.webp",
+    caloriesPer100g: 124,
+    protein: 22.7,
+    fat: 3.7,
+    carbs: 0,
+    category: "Fish"
+  },
+  {
+    id: 60,
+    name: "Crab",
+    image: "Crab.webp",
+    caloriesPer100g: 101,
+    protein: 20,
+    fat: 1.8,
+    carbs: 0,
+    category: "Fish"
+  },
+  {
+    id: 61,
+    name: "Shrimp",
+    image: "Shrimp.webp",
+    caloriesPer100g: 138,
+    protein: 26.5,
+    fat: 2.3,
+    carbs: 1.2,
+    category: "Fish"
   },
 ];
 

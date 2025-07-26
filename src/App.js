@@ -1,50 +1,57 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
-import FoodDetails from "./components/FoodDetails";
-import FoodCard from "./components/FoodCard";
-import NavigationMenu from "./components/NavigationMenu";
-import HamburgerMenu from "./components/HamburgerMenu";
-import About from "./components/About";
-import Search from "./components/Search";
-import Profile from "./components/Profile";
-import foods from "./data/foods";
-import Sidebar from "./Sidebar";
-import { TotalProvider } from "./context/TotalContext";
-import { ThemeProvider, useTheme } from "./context/ThemeContext";
-import { AnimatePresence, motion } from "framer-motion";
-import "./App.css"; 
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { TotalProvider } from './context/TotalContext';
+import { FavoritesProvider, useFavorites } from './context/FavoritesContext';
+import NavigationMenu from './components/NavigationMenu';
+import HamburgerMenu from './components/HamburgerMenu';
+import Sidebar from './Sidebar';
+import FoodCard from './components/FoodCard';
+import FoodDetails from './components/FoodDetails';
+import About from './components/About';
+import Search from './components/Search';
+import Profile from './components/Profile';
+import foods from './data/foods';
+import './App.css';
 
 function AppContent() {
   const [showSidebar, setShowSidebar] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const location = useLocation();
   const { isDarkMode, toggleTheme, backgroundColor, textColor, cardBackground, cardText, cardHover, inputBackground, inputText, inputBorder } = useTheme();
+  const { getFavorites } = useFavorites();
+  
   // عند فتح الصفحة، الفلتر يعود للوضع الافتراضي
   useEffect(() => {
     setSelectedCategory('All');
   }, [location.pathname]);
 
-
   useEffect(() => {
-    if (location.pathname === "/") {
-      setShowSidebar(true);
-    }
+    // Show sidebar only on home page, hide on other pages
+    setShowSidebar(location.pathname === "/");
   }, [location.pathname]);
-
 
   const handleCardClick = () => setShowSidebar(false);
 
-
-
-
   const categories = ['All', ...Array.from(new Set(foods.map(f => f.category).filter(Boolean)))];
 
-
-
-  // فلترة الأطعمة حسب التصنيف
-  const filteredFoods = foods.filter(food =>
+  // فلترة وترتيب الأطعمة - المفضلة في الصف الأول
+  const favorites = getFavorites();
+  
+  const filteredFoods = foods.filter(food => 
     selectedCategory === 'All' || food.category === selectedCategory
   );
+
+  // ترتيب المأكولات: المفضلة أولاً، ثم الباقي
+  const sortedFoods = [...filteredFoods].sort((a, b) => {
+    const aIsFavorite = favorites.includes(a.id);
+    const bIsFavorite = favorites.includes(b.id);
+    
+    if (aIsFavorite && !bIsFavorite) return -1;
+    if (!aIsFavorite && bIsFavorite) return 1;
+    return 0;
+  });
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${backgroundColor}`}>
@@ -82,7 +89,7 @@ function AppContent() {
                   transition={{ duration: 0.4 }}
                   className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center items-center"
                 >
-                  {filteredFoods.map((food) => (
+                  {sortedFoods.map((food) => (
                     <FoodCard key={food.id} food={food} onCardClick={handleCardClick} />
                   ))}
                 </motion.div>
@@ -151,9 +158,11 @@ function App() {
   return (
     <ThemeProvider>
       <TotalProvider>
-         <Router basename="/Calories">
-        <AppContent />
-         </Router>
+        <FavoritesProvider>
+          <Router basename="/Calories">
+            <AppContent />
+          </Router>
+        </FavoritesProvider>
       </TotalProvider>
     </ThemeProvider>
   );

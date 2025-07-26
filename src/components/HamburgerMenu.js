@@ -6,6 +6,31 @@ const HamburgerMenu = ({ categories, selectedCategory, onCategorySelect }) => {
   const menuRef = useRef(null);
   const { textColor } = useTheme();
 
+  // Category icons mapping
+  const getCategoryIcon = (category) => {
+    const icons = {
+      'All': '🍽️',
+      'Bakery': '🥖',
+      'Eggs': '🥚',
+      'Vegetables': '🥬',
+      'Carbs': '🍚',
+      'Dairy': '🥛',
+      'Fats': '🫒',
+      'Legumes': '🫘',
+      'Sweets': '🍫',
+      'Meat': '🥩',
+      'Fish': '🐟',
+      'Fruits': '🍎',
+      'Traditional': '🍽️',
+      'Snacks': '🍿',
+      'Nuts': '🥜',
+      'Potato': '🥔',
+      'Poultry': '🍗',
+      'Rabbit': '🐰'
+    };
+    return icons[category] || '🍽️';
+  };
+
   // إغلاق القائمة عند الضغط خارجها
   useEffect(() => {
     function handleClickOutside(event) {
@@ -48,6 +73,7 @@ const HamburgerMenu = ({ categories, selectedCategory, onCategorySelect }) => {
       {/* Filter Menu */}
       <div className={`filter-menu ${isOpen ? 'active' : ''}`}>
         <h3 style={{ color: textColor }}>Categories</h3>
+        
         <div className="filter-categories">
           {categories.map((category) => (
             <button
@@ -55,7 +81,8 @@ const HamburgerMenu = ({ categories, selectedCategory, onCategorySelect }) => {
               className={`filter-category ${selectedCategory === category ? 'active' : ''}`}
               onClick={() => handleCategoryClick(category)}
             >
-              {category}
+              <span className="category-icon">{getCategoryIcon(category)}</span>
+              <span className="category-name">{category}</span>
             </button>
           ))}
         </div>

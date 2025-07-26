@@ -25,25 +25,25 @@ export const ThemeProvider = ({ children }) => {
       document.body.style.color = '#ffffff';
     } else {
       document.documentElement.classList.remove('dark');
-      document.body.style.backgroundColor = '#ffffff';
-      document.body.style.color = '#000000';
+      document.body.style.backgroundColor = '#fefdf7';
+      document.body.style.color = '#1f2937';
     }
   }, [isDarkMode]);
 
   const theme = {
     isDarkMode,
     toggleTheme,
-    backgroundColor: isDarkMode ? 'bg-gray-900' : 'bg-white',
-    textColor: isDarkMode ? 'text-white' : 'text-black',
-    cardBackground: isDarkMode ? 'bg-gray-800' : 'bg-white',
+    backgroundColor: isDarkMode ? 'bg-gray-900' : 'bg-amber-5',
+    textColor: isDarkMode ? 'text-white' : 'text-gray-800',
+    cardBackground: isDarkMode ? 'bg-gray-800' : 'bg-amber-5',
     cardText: isDarkMode ? 'text-gray-100' : 'text-gray-700',
-    cardHover: isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-blue-50',
-    inputBackground: isDarkMode ? 'bg-gray-700' : 'bg-white',
-    inputText: isDarkMode ? 'text-white' : 'text-black',
-    inputBorder: isDarkMode ? 'border-gray-600' : 'border-gray-300',
-    buttonBackground: isDarkMode ? 'bg-gray-700' : 'bg-blue-50',
-    buttonText: isDarkMode ? 'text-gray-100' : 'text-blue-700',
-    buttonHover: isDarkMode ? 'hover:bg-gray-600' : 'hover:bg-blue-100'
+    cardHover: isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-amber-25',
+    inputBackground: isDarkMode ? 'bg-gray-700' : 'bg-amber-5',
+    inputText: isDarkMode ? 'text-white' : 'text-gray-800',
+    inputBorder: isDarkMode ? 'border-gray-600' : 'border-amber-50',
+    buttonBackground: isDarkMode ? 'bg-gray-700' : 'bg-amber-25',
+    buttonText: isDarkMode ? 'text-gray-100' : 'text-amber-600',
+    buttonHover: isDarkMode ? 'hover:bg-gray-600' : 'hover:bg-amber-50'
   };
 
   return (

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { useTotal } from '../context/TotalContext';
+import ThemeSwitch from './ThemeSwitch';
 
 const Profile = () => {
   const { cardBackground, cardText, textColor, inputBackground, inputText, inputBorder, buttonBackground, buttonText, buttonHover, isDarkMode } = useTheme();
-  const { totalCalories, totalCarbs, totalProtein, totalFat, addedFoods, clearAll } = useTotal();
+  const { totalCalories, totalCarbs, totalProtein, totalFat, addedFoods, clearAll, removeFood } = useTotal();
   
   const [userProfile, setUserProfile] = useState({
     name: 'User',
@@ -24,7 +25,6 @@ const Profile = () => {
         const savedProfile = localStorage.getItem('userProfile');
         if (savedProfile) {
           const parsedProfile = JSON.parse(savedProfile);
-          // التحقق من صحة البيانات
           if (parsedProfile && typeof parsedProfile === 'object') {
             setUserProfile(parsedProfile);
             setSaveStatus('Data loaded successfully!');
@@ -55,13 +55,11 @@ const Profile = () => {
       }
     };
 
-    // تأخير قليل لتجنب الحفظ المتكرر
     const timeoutId = setTimeout(saveProfile, 500);
     return () => clearTimeout(timeoutId);
   }, [userProfile]);
 
   const calculateBMR = () => {
-    // Mifflin-St Jeor Equation
     const bmr = 10 * userProfile.weight + 6.25 * userProfile.height - 5 * userProfile.age + 5;
     return Math.round(bmr);
   };
@@ -102,7 +100,10 @@ const Profile = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Profile Section */}
           <div className={`${cardBackground} rounded-lg shadow-lg p-6`}>
-            <h2 className={`text-xl font-semibold mb-4 ${cardText}`}>Personal Information</h2>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className={`text-xl font-semibold ${cardText}`}>Personal Information</h2>
+              <ThemeSwitch />
+            </div>
             
             <div className="space-y-4">
               <div>
@@ -179,7 +180,7 @@ const Profile = () => {
             
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
-                <div className={`p-4 rounded-lg bg-blue-50 dark:bg-blue-900/20`}>
+                <div className={`p-4 rounded-lg bg-amber-5 dark:bg-blue-900/20`}>
                   <p className={`text-sm ${textColor}`}>BMR</p>
                   <p className={`text-2xl font-bold ${cardText}`}>{bmr} kcal</p>
                 </div>
@@ -196,7 +197,7 @@ const Profile = () => {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div 
-                    className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                    className="bg-amber-600 h-2 rounded-full transition-all duration-300"
                     style={{width: `${Math.min((totalCalories / tdee) * 100, 100)}%`}}
                   ></div>
                 </div>
@@ -236,8 +237,23 @@ const Profile = () => {
             <div className="space-y-2">
               {addedFoods.map((item, idx) => (
                 <div key={idx} className={`flex justify-between items-center p-3 rounded-lg ${isDarkMode ? 'bg-gray-700' : 'bg-white'}`}>
-                  <span className={`${textColor}`}>{item.name}</span>
-                  <span className={`${textColor}`}>{item.grams}g - {Math.round(item.calories)} kcal</span>
+                  <div className="flex items-center space-x-2">
+                    <span className={`${textColor}`}>{item.name}</span>
+                    {item.grams > 100 && (
+                      <span className={`bg-amber-25 text-amber-600 text-xs px-2 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200`}>
+                        {Math.round(item.grams / 100)}x
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className={`${textColor}`}>{Math.round(item.grams)}g - {Math.round(item.calories)} kcal</span>
+                    <button
+                      onClick={() => removeFood(idx)}
+                      className={`text-red-500 hover:text-red-700 text-sm px-2 py-1 rounded transition`}
+                    >
+                      ×
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>

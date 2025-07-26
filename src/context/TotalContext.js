@@ -35,17 +35,45 @@ export const TotalProvider = ({ children }) => {
     setTotalCarbs(prev => prev + (food.carbs / 100) * g);
     setTotalProtein(prev => prev + (food.protein / 100) * g);
     setTotalFat(prev => prev + (food.fat / 100) * g);
-    setAddedFoods(list => [
-      ...list,
-      {
-        name: food.name,
-        grams: g,
-        calories: (food.caloriesPer100g / 100) * g,
-        carbs: (food.carbs / 100) * g,
-        protein: (food.protein / 100) * g,
-        fat: (food.fat / 100) * g,
+    setAddedFoods(list => {
+      // البحث عن الطعام الموجود بالفعل
+      const existingFoodIndex = list.findIndex(item => item.name === food.name);
+      
+      if (existingFoodIndex !== -1) {
+        // إذا كان الطعام موجود، قم بتحديث الكمية
+        const updatedList = [...list];
+        const existingFood = updatedList[existingFoodIndex];
+        const newGrams = existingFood.grams + g;
+        const newCalories = (food.caloriesPer100g / 100) * newGrams;
+        const newCarbs = (food.carbs / 100) * newGrams;
+        const newProtein = (food.protein / 100) * newGrams;
+        const newFat = (food.fat / 100) * newGrams;
+        
+        updatedList[existingFoodIndex] = {
+          ...existingFood,
+          grams: newGrams,
+          calories: newCalories,
+          carbs: newCarbs,
+          protein: newProtein,
+          fat: newFat,
+        };
+        
+        return updatedList;
+      } else {
+        // إذا كان الطعام جديد، أضفه للقائمة
+        return [
+          ...list,
+          {
+            name: food.name,
+            grams: g,
+            calories: (food.caloriesPer100g / 100) * g,
+            carbs: (food.carbs / 100) * g,
+            protein: (food.protein / 100) * g,
+            fat: (food.fat / 100) * g,
+          }
+        ];
       }
-    ]);
+    });
   };
 
   const removeFood = (idx) => {
