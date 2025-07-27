@@ -327,7 +327,7 @@ const foods = [
   },
   // Dairy
   {
-    id: 31,
+    id: 33,
     name: "Cheddar Cheese",
     image: "CheddarCheese.webp",
     caloriesPer100g: 404,
@@ -337,7 +337,7 @@ const foods = [
     category: "Dairy"
   },
   {
-    id: 32,
+    id: 34,
     name: "Mozzarella Cheese",
     image: "MozzarellaCheese.webp",
     caloriesPer100g: 280,
@@ -347,7 +347,7 @@ const foods = [
     category: "Dairy"
   },
   {
-    id: 33,
+    id: 35,
     name: "Turkey Cheese",
     image: "TurkeyCheese.webp",
     caloriesPer100g: 387,
@@ -357,7 +357,7 @@ const foods = [
     category: "Dairy"
   },
   {
-    id: 34,
+    id: 36,
     name: "Milk",
     image: "milk.webp",
     caloriesPer100g: 62,
@@ -368,7 +368,7 @@ const foods = [
   },
   // Carbs
   {
-    id: 35,
+    id: 37,
     name: "Pasta",
     image: "Pasta.webp",
     caloriesPer100g: 371,
@@ -378,7 +378,7 @@ const foods = [
     category: "Carbs"
   },
   {
-    id: 36,
+    id: 38,
     name: "Rice",
     image: "rice.webp",
     caloriesPer100g: 360,
@@ -388,7 +388,7 @@ const foods = [
     category: "Carbs"
   },
   {
-    id: 37,
+    id: 39,
     name: "Flour",
     image: "Flour.webp",
     caloriesPer100g: 364,
@@ -398,7 +398,7 @@ const foods = [
     category: "Carbs"
   },
   {
-    id: 38,
+    id: 40,
     name: "Oats",
     image: "oats.webp",
     caloriesPer100g: 389,
@@ -408,7 +408,7 @@ const foods = [
     category: "Carbs"
   },
   {
-    id: 39,
+    id: 41,
     name: "Freekeh",
     image: "Freekeh.webp",
     caloriesPer100g: 124,
@@ -419,7 +419,7 @@ const foods = [
   },
   // Fats
   {
-    id: 40,
+    id: 42,
     name: "Oil",
     image: "Oil.webp",
     caloriesPer100g: 884,
@@ -429,7 +429,7 @@ const foods = [
     category: "Fats"
   },
   {
-    id: 41,
+    id: 43,
     name: "Ghee (Clarified Butter)",
     image: "Ghee(Clarified Butter).webp",
     caloriesPer100g: 900,
@@ -440,7 +440,7 @@ const foods = [
     category: "Fats"
   },
   {
-    id: 42,
+    id: 44,
     name: "Butter",
     image: "Ghee.webp",
     caloriesPer100g: 717,
@@ -452,7 +452,7 @@ const foods = [
   },
   // Legumes
   {
-    id: 42,
+    id: 45,
     name: "Beans",
     image: "Beans.webp",
     caloriesPer100g: 105,
@@ -462,7 +462,7 @@ const foods = [
     category: "Legumes"
   },
   {
-    id: 43,
+    id: 46,
     name: "Tahini",
     image: "Tahini.webp",
     caloriesPer100g: 595,
@@ -473,7 +473,7 @@ const foods = [
   },
   // Fruits
   {
-    id: 44,
+    id: 47,
     name: "Banana",
     image: "banana.webp",
     caloriesPer100g: 89,
@@ -483,7 +483,7 @@ const foods = [
     category: "Fruits"
   },
   {
-    id: 45,
+    id: 48,
     name: "Mango",
     image: "mango.webp",
     caloriesPer100g: 80,
@@ -493,7 +493,7 @@ const foods = [
     category: "Fruits"
   },
   {
-    id: 46,
+    id: 49,
     name: "Orange",
     image: "orange.webp",
     caloriesPer100g: 47,
@@ -504,7 +504,7 @@ const foods = [
   },
   // Nuts
   {
-    id: 47,
+    id: 50,
     name: "Peanut butter",
     image: "peanutbutter.webp",
     caloriesPer100g: 588,
@@ -514,7 +514,7 @@ const foods = [
     category: "Nuts"
   },
   {
-    id: 48,
+    id: 51,
     name: "Peanuts",
     image: "peanut.webp",
     caloriesPer100g: 567,
@@ -525,7 +525,7 @@ const foods = [
   },
   // Potato
   {
-    id: 49,
+    id: 52,
     name: "French fries",
     image: "Frenchfries.webp",
     caloriesPer100g: 213,
@@ -535,7 +535,7 @@ const foods = [
     category: "Potato"
   },
   {
-    id: 50,
+    id: 53,
     name: "Boiled potatoes",
     image: "Boiledpotatoes.webp",
     caloriesPer100g: 87,
@@ -546,7 +546,7 @@ const foods = [
   },
   // Sweets
   {
-    id: 51,
+    id: 54,
     name: "Chocolate",
     image: "Chocolate.webp",
     caloriesPer100g: 535,
@@ -556,7 +556,7 @@ const foods = [
     category: "Sweets"
   },
   {
-    id: 52,
+    id: 55,
     name: "Dark Chocolate",
     image: "DarkChocolate.webp",
     caloriesPer100g: 505,
@@ -566,7 +566,7 @@ const foods = [
     category: "Sweets"
   },
   {
-    id: 53,
+    id: 56,
     name: "Donut",
     image: "Donuts.webp",
     caloriesPer100g: 361,
@@ -577,7 +577,7 @@ const foods = [
   },
   // Traditional
   {
-    id: 54,
+    id: 57,
     name: "Falafel",
     image: "falafel.webp",
     caloriesPer100g: 333,
@@ -587,7 +587,7 @@ const foods = [
     category: "Traditional"
   },
   {
-    id: 55,
+    id: 58,
     name: "Mahshi",
     image: "Mahshi.webp",
     caloriesPer100g: 140,
@@ -597,7 +597,7 @@ const foods = [
     category: "Traditional"
   },
   {
-    id: 56,
+    id: 59,
     name: "Molokhia",
     image: "Molokhia.webp",
     caloriesPer100g: 64,
@@ -607,7 +607,7 @@ const foods = [
     category: "Traditional"
   },
   {
-    id: 57,
+    id: 60,
     name: "Vegetable soup",
     image: "Vegetablesoup.webp",
     caloriesPer100g: 42,
@@ -617,7 +617,7 @@ const foods = [
     category: "Traditional"
   },
   {
-    id: 58,
+    id: 61,
     name: "Koshary",
     image: "Koshary.webp",
     caloriesPer100g: 320,
@@ -628,7 +628,7 @@ const foods = [
   },
   // Pastry
   {
-    id: 59,
+    id: 62,
     name: "Macaroni béchamel",
     image: "Macaroniwithbéchamel.webp",
     caloriesPer100g: 175,
@@ -638,7 +638,7 @@ const foods = [
     category: "Pastry"
   },
   {
-    id: 60,
+    id: 63,
     name: "Pizza",
     image: "Pizza.webp",
     caloriesPer100g: 276,
@@ -648,7 +648,7 @@ const foods = [
     category: "Pastry"
   },
   {
-    id: 61,
+    id: 64,
     name: "Cannelloni",
     image: "Cannelloni.webp",
     caloriesPer100g: 210,
@@ -658,7 +658,7 @@ const foods = [
     category: "Pastry"
   },
   {
-    id: 62,
+    id: 65,
     name: "Lasagna",
     image: "Lasagna.webp",
     caloriesPer100g: 163,
@@ -669,7 +669,7 @@ const foods = [
   },
   // Snacks
   {
-    id: 63,
+    id: 66,
     name: "Popcorn",
     image: "popcorn.webp",
     caloriesPer100g: 387,
